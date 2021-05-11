@@ -24,8 +24,9 @@ urlpatterns = [
     path('home/',views.home,name='home'),
     path('qidian/',views.qidian,name="qidian"),
     path('refresh/',views.qidian_refresh,name="refresh"),
-    path('joke/',views.twitter,name="twitter"),
+    path('twitter/',views.twitter,name="twitter"),
     path('weibo/',views.weibo_net,name="weibo"),
-    path('hupu/',views.hupu,name="hupu")
+    path('hupu/',views.hupu,name="hupu"),
+    path('cat/',views.cat,name ='cat')
 
 ]

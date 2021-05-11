@@ -3,7 +3,7 @@ from urlextract import URLExtract
 import requests
 from lxml import html
 import tweepy
-from app01 import models
+from app01 import models,base
 
 etree = html.etree
 
@@ -51,7 +51,7 @@ class Hupu:
             hupu['title'] = content[0]
             hupu['href'] = href
             hupu['day']= content[2]
-            hupu['time'] = content[3]
+
             hupu_list.append(hupu)
         return hupu_list
 
@@ -96,3 +96,11 @@ class Qidian():
 
                 models.QiDian.objects.create(rank=count, title=title, author=author, type=type, href=href,
                                              status=status)
+class Cat():
+    def cat(self):
+        li_list = base.Pc().pc('http://www.maomaogougou.cn/tupian/maomi/keai/', '//*[@id="list"]/div[1]/div')
+        img_src = []
+        for li in li_list:
+            img = li.xpath('./a/img/@src')[0]
+            img_src.append(img)
+        return img_src

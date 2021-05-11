@@ -8,6 +8,7 @@
         box-sizing: border-box;
         transition: all .3s;
         margin: 20px;
+        text-align: center;
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
@@ -46,25 +47,15 @@
                         <div id="cookie-banner"></div>	    <nav role="navigation" aria-label="Top Level">
                         <div class="container">
                             <div class="nav navbar-header">
-                                <a class="navbar-brand" href="/"><span itemprop="name">Home</span></a>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Expand and Collapse Menu">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                            </button>
+                                <a class="navbar-brand" href="/home/"><span >Home</span></a>
                             </div>
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-left">
-                                    <li><a id="nav-docs" href="/docs">Docs</a></li>
-                                    <li><a id="nav-updates" href="/updates">Updates</a></li>
-                                    <li><a id="nav-blogs" href="/blogs">Blog</a></li>
-                                    <li><a id="nav-extend" href="/api">API</a></li>
-                                    <li><a href="#">zheshi</a> </li>
-                                      <li><a href="https://marketplace.visualstudio.com/VSCode" target="_blank" id="nav-extensions">Extensions</a></li>
-                                    <li><a id="nav-faqs" href="/docs/supporting/faq">FAQ</a></li>
-                                      <li><a id="nav-learn" href="/learn">Learn</a></li>
-                                    <li class="search visible-xs"><a href="/Search">Search</a></li>
-                                    <li class="visible-xs"><a href="/Download">Download</a></li>
+                                    <li><a href="/weibo/">Weibo</a></li>
+                                    <li><a href="/hupu/">Hupu</a></li>
+                                    <li><a href="/twitter/">Twitter</a></li>
+                                    <li><a href="/qidian/">Qidian</a></li>
+                                    <li><a href="#">More</a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -88,7 +79,7 @@
                           <HR align=center width=300 color=red SIZE=8>
     {#                    <a href="{% url 'rank' %}" style="text-decoration:none;color: black;font-size: 200%;margin-left: 20%;margin-right: 20%;">起点月票榜</a>#}
                         <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #0778f6">
-                            <a href="{% url 'twitter' %}" style="text-decoration:none;color: #eae5e5;font-size: 200%;">推特</a>
+                            <a href="/twitter/" style="text-decoration:none;color: #eae5e5;font-size: 200%;">推特</a>
                         </div>
                         <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #1aa9cd">
                             <a href="{% url 'qidian' %}" style="text-decoration:none;color: #ffffff;font-size: 200%;">起点排行榜</a>
@@ -106,13 +97,9 @@
                 <div>
                   <div class="panel-body">
                       {% block content %}
-                          {% for que in queery %}
-                              <div class="card">
-                                {{ que.content }}
-                              </div>
-                          {% endfor %}
-
-
+                          <div class="card bg-success" style="height: 400px">
+                            <img src="http://j4.dfcfw.com/charts/pic6/110003.png?v=0.8979304210576509" alt="..." class="img-rounded " style="margin-top: 60px">
+                          </div>
                       {% endblock %}
                   </div>
                 </div>

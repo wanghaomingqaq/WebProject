@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69031c46-74b2-40ac-a142-3caf059272fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/qidian.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/weibo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app01/myclass.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/myclass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django0002/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django0002/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/qidian.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/qidian.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1ojw5rMjn6XTHhlQVJW8rfaFbiN" />
   <component name="ProjectViewState">
@@ -263,7 +270,7 @@
       <workItem from="1620618403605" duration="9454000" />
       <workItem from="1620644049209" duration="14121000" />
       <workItem from="1620704623981" duration="19490000" />
-      <workItem from="1620740303392" duration="2195000" />
+      <workItem from="1620740303392" duration="6399000" />
     </task>
     <servers />
   </component>
