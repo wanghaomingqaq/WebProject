@@ -1,0 +1,138 @@
+<style type="text/css">
+    .card{
+        -webkit-text-size-adjust: 100%;
+        color: rgb(76, 73, 72);
+        font-size: 14.5px;
+        font-family: "San Francisco", "Lucida Grande", "Lucida Sans Unicode", "helvetica neue", Verdana, tahoma, Aril, PingFangSC-Light, "hiragino sans gb", "Microsoft YaHei UI", "Microsoft YaHei", 微软雅黑, Heiti, 黑体, sans-serif;
+        line-height: 2;
+        box-sizing: border-box;
+        transition: all .3s;
+        margin: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+     }
+    .a:link{
+        color:#000000;
+        background-color:#ffffff
+    }
+    .a:visited{
+        color: #9e9999;
+        background-color: #ffffff
+    }
+    body{
+        text-align: center;
+        background:#2f373a;
+        font-family:Arial,Helvetica,sans-serif;font-size:100%;
+        line-height:1em;color:#4e4e4e;
+        min-width:920px;
+        border-top:10px solid #0c0e0e
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css"/>
+    <script src="/static/jquery.js"></script>
+     {% block css %}
+     {% endblock %}
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top affix-top" data-spy="affix" data-offset-top="1">
+                        <div id="cookie-banner"></div>	    <nav role="navigation" aria-label="Top Level">
+                        <div class="container">
+                            <div class="nav navbar-header">
+                                <a class="navbar-brand" href="/"><span itemprop="name">Home</span></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Expand and Collapse Menu">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                            </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li><a id="nav-docs" href="/docs">Docs</a></li>
+                                    <li><a id="nav-updates" href="/updates">Updates</a></li>
+                                    <li><a id="nav-blogs" href="/blogs">Blog</a></li>
+                                    <li><a id="nav-extend" href="/api">API</a></li>
+                                    <li><a href="#">zheshi</a> </li>
+                                      <li><a href="https://marketplace.visualstudio.com/VSCode" target="_blank" id="nav-extensions">Extensions</a></li>
+                                    <li><a id="nav-faqs" href="/docs/supporting/faq">FAQ</a></li>
+                                      <li><a id="nav-learn" href="/learn">Learn</a></li>
+                                    <li class="search visible-xs"><a href="/Search">Search</a></li>
+                                    <li class="visible-xs"><a href="/Download">Download</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" style="margin-top: 60px">
+
+                  <div>
+                    <div class="card">
+                        <div class="header">
+                            <h1>{{ xingqi }}</h1>
+                        </div>
+                        <div class="body">
+                            <p>{{ month }}&ensp;{{ day }},{{ years }}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                          <h1 class="text-center">something</h1>
+                          <HR align=center width=300 color=red SIZE=8>
+    {#                    <a href="{% url 'rank' %}" style="text-decoration:none;color: black;font-size: 200%;margin-left: 20%;margin-right: 20%;">起点月票榜</a>#}
+                        <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #0778f6">
+                            <a href="#" style="text-decoration:none;color: #eae5e5;font-size: 200%;">高数</a>
+                        </div>
+                        <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #1aa9cd">
+                            <a href="{% url 'rank' %}" style="text-decoration:none;color: #ffffff;font-size: 200%;">排行榜</a>
+                        </div>
+                        <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #367d8e">
+                            <a href="{% url 'weibo' %}" style="text-decoration:none;color: #ffffff;font-size: 200%;">微博</a>
+                        </div>
+                        <div class="card" style="width:90%;margin-top: 10px;height: 50px;background-color: #37484c">
+                            <a href="{% url 'hupu' %}" style="text-decoration:none;color: #ffffff;font-size: 200%;">虎扑</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 60px;text-align: left">
+                <div>
+                  <div class="panel-body">
+                      {% block content %}
+                          {% for que in queery %}
+                              <div class="card">
+                                {{ que.content }}
+                              </div>
+                          {% endfor %}
+
+
+                      {% endblock %}
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="margin-top: 60px">
+                <div class="card"style="background-color: #77b3e2">
+                    {% for d in queery %}
+                        <div class="card" style="width: 90%;height: 70px;text-align: left;background-color: #d0f3f6">
+                            <img style="width: 35px;height: 35px" src="https://tvax3.sinaimg.cn/crop.0.0.512.512.180/007EPWBRly8gnyh9tt9gaj30e80e8t9c.jpg?KID=imgbed,tva&Expires=1620741713&ssig=hkdCvFxzJQ" alt="..." class="img-circle">
+                            <span class="text-danger">江宁婆婆&ensp;&ensp;</span>{{ d.title }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    {% block js %}
+
+    {% endblock %}
+
+
+</body>
+</html>
