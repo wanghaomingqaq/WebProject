@@ -3,6 +3,7 @@ from urlextract import URLExtract
 import requests
 from lxml import html
 import tweepy
+from app01 import models
 
 etree = html.etree
 
@@ -71,3 +72,27 @@ class Twitter():
             content = tweet.text
             a.append(content)
         return a
+class Qidian():
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+
+    }
+    def qidian(self):
+        count = 0
+        models.QiDian.objects.filter().delete()
+        for page in range(1, 10):
+            url = 'https://www.qidian.com/rank/yuepiao?page=' + str(page)
+            page_text = requests.get(url, headers=self.headers).text
+            tree = etree.HTML(page_text)
+            li_list = tree.xpath('//*[@id="rank-view-list"]/div/ul/li')
+
+            for li in li_list:
+                count += 1
+                title = li.xpath('./div[2]/h4/a/text()')[0]
+                author = li.xpath('./div[2]/p/a/text()')[0]
+                type = li.xpath('./div[2]/p/a[2]/text()')[0]
+                href = 'https:' + li.xpath('./div[2]/h4/a/@href')[0]
+                status = li.xpath('./div[2]/p/span/text()')[0]
+
+                models.QiDian.objects.create(rank=count, title=title, author=author, type=type, href=href,
+                                             status=status)
