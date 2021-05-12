@@ -4,6 +4,7 @@ import requests
 from lxml import html
 import tweepy
 from app01 import models,base
+from app01.base import Pc
 
 etree = html.etree
 
@@ -93,7 +94,6 @@ class Qidian():
                 type = li.xpath('./div[2]/p/a[2]/text()')[0]
                 href = 'https:' + li.xpath('./div[2]/h4/a/@href')[0]
                 status = li.xpath('./div[2]/p/span/text()')[0]
-
                 models.QiDian.objects.create(rank=count, title=title, author=author, type=type, href=href,
                                              status=status)
 class Cat():
@@ -104,3 +104,16 @@ class Cat():
             img = li.xpath('./a/img/@src')[0]
             img_src.append(img)
         return img_src
+class Jlu():
+    def jlu(self):
+        li_list = Pc().pc('https://oa.jlu.edu.cn/defaultroot/PortalInformation!jldxList.action?channelId=179577',
+                          '//*[@id="itemContainer"]/div')
+        for li in li_list:
+            title = li.xpath('./a/text()')[0]
+            author = li.xpath('./a/text()')[1]
+            href = 'https://oa.jlu.edu.cn/defaultroot/' + li.xpath('./a/@href')[0]
+            time = li.xpath('./span/text()')[0]
+            if title in models.Jilin.objects.all():
+                pass
+            else:
+                models.Jilin.objects.create(title=title,time=time,href=href,author=author)

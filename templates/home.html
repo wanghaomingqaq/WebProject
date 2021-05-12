@@ -15,11 +15,20 @@
      }
     .a:link{
         color:#000000;
-        background-color:#ffffff
+        background-color: #ffffff
     }
     .a:visited{
         color: #9e9999;
         background-color: #ffffff
+    }
+
+    .a_:link{
+        color:#000000;
+        background-color:#d0f3f6
+    }
+    .a_:visited{
+        color: #9e9999;
+        background-color: #d0f3f6
     }
     body{
         text-align: center;
@@ -97,6 +106,7 @@
                 <div>
                   <div class="panel-body">
                       {% block content %}
+                          <span>{{ contents }}</span>
                           <div class="card bg-success" style="height: 400px">
                             <img src="http://j4.dfcfw.com/charts/pic6/110003.png?v=0.8979304210576509" alt="..." class="img-rounded " style="margin-top: 60px">
                           </div>
@@ -105,11 +115,15 @@
                 </div>
             </div>
             <div class="col-md-3" style="margin-top: 60px">
-                <div class="card"style="background-color: #77b3e2">
-                    {% for d in queery %}
+                <div class="card" style="background-color: #77b3e2">
+                    {% for que in queery %}
                         <div class="card" style="width: 90%;height: 70px;text-align: left;background-color: #d0f3f6">
                             <img style="width: 35px;height: 35px" src="https://tvax3.sinaimg.cn/crop.0.0.512.512.180/007EPWBRly8gnyh9tt9gaj30e80e8t9c.jpg?KID=imgbed,tva&Expires=1620741713&ssig=hkdCvFxzJQ" alt="..." class="img-circle">
-                            <span class="text-danger">江宁婆婆&ensp;&ensp;</span>{{ d.title }}
+                            <span class="text-danger">
+                                校内通知&ensp;&ensp;
+                            </span>
+                            <a class="a_" href="{{ que.href }}">
+                                {{ que.title }}</a>
                         </div>
                     {% endfor %}
 

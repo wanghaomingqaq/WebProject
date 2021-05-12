@@ -27,6 +27,9 @@ urlpatterns = [
     path('twitter/',views.twitter,name="twitter"),
     path('weibo/',views.weibo_net,name="weibo"),
     path('hupu/',views.hupu,name="hupu"),
-    path('cat/',views.cat,name ='cat')
+    path('cat/',views.cat,name ='cat'),
+    path('write/',views.write,name='write'),
+    path('jlu_new/',views.jlu_new),
+    path('jlu/',views.jlu)
 
 ]

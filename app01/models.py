@@ -22,3 +22,8 @@ class Weibo(models.Model):
     url = models.CharField(max_length=256)
     content = models.TextField()
     jpg = models.CharField(max_length=256)
+class Jilin(models.Model):
+    title = models.CharField(max_length=256)
+    author = models.CharField(max_length=256)
+    href = models.CharField(max_length=256)
+    time = models.CharField(max_length=256)
