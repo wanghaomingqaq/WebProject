@@ -124,7 +124,7 @@ def write(request):
         contents = request.POST.get('contents')
         print(contents,'sadfasfd')
         return redirect('/home')
-    return render(request,'write.html',locals())
+    return render(request,'views.html',locals())
 
 
 def jlu_new(request):
@@ -133,3 +133,14 @@ def jlu_new(request):
 def jlu(request):
     queery = models.Jilin.objects.all()
     return render(request,'jlu.html',locals())
+
+
+def article(request,article_id):
+    note = models.Article.objects.get(id=int(article_id))
+    note.content = markdown(note.content,extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc'
+    ])
+
+    return render(request,'article.html',locals())
